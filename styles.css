@@ -1,198 +1,234 @@
-/* charity: water Brand Colors & Fonts
-
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
-
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
-
-Fonts:
-- Proxima Nova
-- Avenir
-
+/*
+  Set the default font for all text to Proxima Nova
 */
-
-/* 
-  Charity: Water Landing Page Styles
-  This CSS uses the provided color palette and beginner-friendly styles.
-*/
-
-/* Set up the main font and background color for the whole page */
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  font-family: 'Proxima Nova', Arial, sans-serif;
+}
+/* Navigation bar styles */
+.site-nav {
+  margin-left: 0; /* Remove left margin so nav hugs right side */
+  margin-right: 32px; /* Add space from the right edge */
+}
+
+.site-nav ul {
+  list-style: none; /* Remove bullets */
   margin: 0;
   padding: 0;
-  color: #222;
+  display: flex; /* Horizontal layout */
+  gap: 36px; /* More space between nav sections */
 }
 
-/* Add a slight shadow and rounded corners to each section for depth */
-section {
-  background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
-  padding: 24px 16px;
+.site-nav a {
+  color: #fff; /* White text */
+  text-decoration: none; /* No underline */
+  font-size: 1.35em; /* Larger font size for nav bar */
+  padding: 10px 20px; /* More padding for bigger bubbles */
+  border-radius: 999px; /* Fully round bubbles */
+  transition: background 0.2s;
+  display: inline-flex; /* Use flex for vertical alignment */
+  align-items: center; /* Vertically center text */
+  height: 43px; /* Match GIVE button height for alignment */
+  box-sizing: border-box;
 }
 
-/* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+.site-nav a:hover {
+  background: #ffc907; /* Gold color on hover */
+  color: #fff; /* Keep text white */
 }
 
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
+/* Special style for the GIVE button */
+.give-btn {
+  background: none; /* Gold color */
+  color: #1a1a1a; /* Dark text */
   font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
+  padding: 6px 18px;
+  border-radius: 999px; /* Fully round bubble */
+  margin-left: 8px;
+  transition: background 0.2s, color 0.2s;
 }
 
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
-
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
-  font-weight: bold;
-}
-
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Style the impact story image */
-.impact-image {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
-}
-
-/* Donate Button Styles */
-.donate-button {
-  display: inline-block;
-  background-color: #4FCB53; /* Green */
+.give-btn:hover {
+  background: #003366; /* Dark blue for better contrast with yellow drop */
   color: #fff;
-  padding: 14px 32px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
-  border: none;
-  cursor: pointer;
+}
+/*
+  Style for the main heading on the left side of the screen
+  Beginner-friendly and easy to adjust
+*/
+.main-heading {
+  position: absolute;
+  /* Raise the heading closer to the top header, but not too close */
+  top: 22%; /* Adjust this value for more or less space */
+  left: 7%; /* Shift more to the left */
+  color: white;
+  max-width: 650px; /* Allow text to go wider */
+  text-align: center; /* Center the text inside the box */
 }
 
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
+.main-heading h2 {
+  font-size: 56px; /* Large text as requested */
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4); /* Make text readable on image */
+  font-family: 'Proxima Nova', Arial, sans-serif; /* Use Proxima Nova if available */
 }
 
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
+/* Subheading style for added text below the main heading */
+.subheading {
+  margin-top: 28px; /* Space from main heading */
+  color: #fff;
+  font-size: 1.35em; /* Larger font size */
+  line-height: 1.5;
+  text-align: center;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.3); /* For readability on image */
+  font-family: 'Proxima Nova', Arial, sans-serif; /* Use Proxima Nova for subheading */
 }
 
-/* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
+/*
+  Main section background image
+  The image appears under the header and covers the whole section
 */
 
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
-@media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
-  .hero {
-    padding: 32px 8px;
-    font-size: 1em;
-  }
-
-  /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
-    font-size: 1.4em;
-  }
-
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
-  }
-
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
-  }
-
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
-    text-align: center;
-  }
-
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
-  }
+/*
+  Make the background image cover the whole screen
+  and appear behind all content
+*/
+body {
+  background-image: url('img/clean_water 2.jpg'); /* Set background image */
+  background-size: cover; /* Make image cover the area */
+  background-position: center; /* Center the image */
+  min-height: 100vh; /* Make sure body is at least full viewport height */
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-  }
+/* Remove main-bg styles since background is now on body */
+.main-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: none;
+  display: block;
+}
 
-  .impact-image {
-    width: 300px;
-  }
+/* Optional: style for content inside the main section */
+.main-content {
+  /* Add a slight background for readability */
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  border-radius: 8px;
+}
+/*
+  Styles for the landing page header
+  The header has a dark background color (#1a1a1a) and white text
+*/
+
+.site-header {
+  background-color: #1a1a1a; /* Dark background */
+  color: #fff; /* White text */
+  padding: 22px 0 22px 25px; /* Adjusted padding for nav */
+  width: 100%; /* Make header take full width */
+  box-sizing: border-box; /* Include padding in width */
+  display: flex; /* Use flex to align items */
+  align-items: center; /* Vertically center logo and nav */
+  justify-content: space-between; /* Logo left, nav right */
+}
+
+/* Style for the logo image */
+.site-logo {
+  height: 28px; /* Smaller logo height */
+  vertical-align: middle;
+  display: block; /* Make sure it stays on the left */
+  margin-left: 0;
+}
+
+/* CTA section styles */
+.cta-section {
+  margin-top: 48px; /* More space below subheading */
+  text-align: center;
+}
+
+.cta-text {
+  color: #fff;
+  font-size: 1.35em; /* Slightly larger font size */
+  font-family: 'Proxima Nova', Arial, sans-serif;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.3); /* For readability on image */
+}
+
+.amount-buttons {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+}
+
+.amount-btn {
+  background: #ffc907;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 1.1em;
+  font-family: 'Proxima Nova', Arial, sans-serif;
+  font-weight: bold;
+  padding: 12px 0;
+  width: 120px; /* Make all buttons the same width */
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+.amount-btn:hover {
+  background: #003366; /* Dark blue on hover */
+  color: #fff;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Special styling for the 'GIVE NOW' button in the CTA section */
+.give-now-btn {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  width: 190px; /* Slightly longer button */
+  font-size: 1.4em; /* Larger font size */
+  display: flex; /* Align text and image horizontally */
+  align-items: center; /* Vertically center text and image */
+  justify-content: center; /* Center content in button */
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+.give-now-btn:hover {
+  background: #003366;
+  color: #fff;
+}
+
+.give-now-btn-wrapper {
+  margin-top: 20px; /* More space above the GIVE NOW button */
+  display: flex;
+  justify-content: center;
+}
+
+.give-now-img {
+  height: 23px; /* Smaller size to fit nicely in the button */
+  margin-left: 8px;
+}
+
+/* Header drop image style */
+.header-drop-img {
+  height: 23px;
+  margin-left: 8px;
+  /* Raise the yellow drop image to align with nav text */
+  display: inline-block;
+  position: relative;
+  top: -.2px; /* Move image up for better alignment */
+}
+
+/* New styles for the donation message under the GIVE NOW button */
+.donation-message {
+  color: #fff;
+  font-size: 1.1em;
+  margin-top: 18px;
+  text-align: center;
+  font-family: 'Proxima Nova', Arial, sans-serif;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.3); /* For readability on image */
 }
